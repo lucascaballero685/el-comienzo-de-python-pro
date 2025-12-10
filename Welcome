@@ -1,0 +1,26 @@
+import random
+
+print("¡Adivina el número del 1 al 20!")
+
+numero_secreto = random.randint(1, 20)
+intentos = 5
+
+for intento in range(1, intentos + 1):
+    print("Intento {intento}: Adivina el número del 1 al 20:")
+
+    # Validación del input para que nunca dé errores
+    while True:
+        entrada = input("> ")
+        if entrada.isdigit():        # Verifica que sean solo números
+            numero_usuario = int(entrada)
+            break
+        else:
+            print("Por favor ingresa un número válido del 1 al 20.")
+
+    if numero_usuario == numero_secreto:
+        print("¡Adivinaste el número! 🎉")
+        break
+    elif numero_usuario < numero_secreto:
+        print("El número secreto es mayor.")
+    else:
+        print("El número secreto es menor.")
